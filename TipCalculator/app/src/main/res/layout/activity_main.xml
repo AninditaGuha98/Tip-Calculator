@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/billamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:text=" Bill Amount($)"
+        android:textColor="#0C0B0B"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/amountinput2"
+        android:layout_width="203dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="none"
+        android:singleLine="true"
+        android:text="0"
+        android:textColor="#0C0B0B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toEndOf="@+id/billamount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/error_display"
+        android:layout_width="241dp"
+        android:layout_height="23dp"
+        android:layout_centerHorizontal="true"
+        android:text=" "
+        android:textColor="#BA1818"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toEndOf="@+id/billamount"
+        app:layout_constraintTop_toBottomOf="@+id/amountinput2" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="45dp"
+        android:text=" Tip Percentage"
+        android:textColor="#0C0B0B"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billamount" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="235dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:indeterminate="false"
+        android:max="25"
+        android:progress="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tip"
+        app:layout_constraintTop_toBottomOf="@+id/tipinput" />
+
+    <TextView
+        android:id="@+id/tipinput"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="25dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:text="15%"
+        android:textColor="#0C0B0B"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/tip"
+        app:layout_constraintTop_toBottomOf="@+id/amountinput2" />
+
+
+    <TextView
+        android:id="@+id/split"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="50dp"
+        android:text=" Split Amongst"
+        android:textColor="#0C0B0B"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tip" />
+
+    <EditText
+        android:id="@+id/split_value"
+        android:layout_width="204dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="number"
+        android:singleLine="true"
+        android:text="1"
+        android:textColor="#0C0B0B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toEndOf="@+id/split"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar1" />
+
+<!--Buttons for reseting and calculating values-->
+    <Button
+        android:id="@+id/calculate"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#009688"
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/split_value"></Button>
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:background="#009688"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/split_value"></Button>
+
+<!--TextView for displaying result-->
+    <TextView
+        android:id="@+id/result_value"
+        android:layout_width="348dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reset" />
+
+<!--    Layout for the custom keyboard starts  -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+<!--Horizontal layout-1-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/key_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 7 "
+                android:textColor="#FFFFFF">
+
+            </Button>
+
+            <Button
+                android:id="@+id/key_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 8 "
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></Button>
+
+            <Button
+                android:id="@+id/key_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 9 "
+                android:textColor="#FFFFFF">>
+
+            </Button>
+
+        </LinearLayout>
+<!--Horizontal layout-2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/key_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 4 "
+                android:textColor="#FFFFFF">></Button>
+
+            <Button
+                android:id="@+id/key_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 5 "
+                android:textColor="#FFFFFF">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></Button>
+
+            <Button
+                android:id="@+id/key_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 6 "
+                android:textColor="#FFFFFF">></Button>
+
+        </LinearLayout>
+<!--Horizontal layout-3-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/key_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 1 "
+                android:textColor="#FFFFFF">></Button>
+
+            <Button
+                android:id="@+id/key_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 2 "
+                android:textColor="#FFFFFF">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></Button>
+
+            <Button
+                android:id="@+id/key_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 3 "
+                android:textColor="#FFFFFF">></Button>
+
+        </LinearLayout>
+<!--Horizontal layout-4-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/key_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" . "
+                android:textStyle="bold"
+                android:textColor="#FFFFFF">></Button>
+
+            <Button
+                android:id="@+id/key_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" 0 "
+                android:textColor="#FFFFFF">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></Button>
+
+            <Button
+                android:id="@+id/key_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text=" delete "
+                android:textColor="#FFFFFF">></Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
